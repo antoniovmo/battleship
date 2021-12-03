@@ -195,21 +195,19 @@ export class BoardComponent implements OnInit {
     }
   }
 
-  initialize_variables () {
-
-    // Initialize every variable
-    this.m_message = ''
-    this.m_is_end_game = false
-    this.m_destroyed_ships = 0
-    this.m_missiles = this.m_backup_missiles
-  }
-
   play_again() {
-
     // Create new squares and ships
     this.gameBoardService.play_again()
 
     // Initialize every variable
     this.initialize_variables()
+  }
+
+  initialize_variables () {
+    // Initialize every variable
+    this.m_message = ''
+    this.m_is_end_game = false
+    this.m_destroyed_ships = 0
+    this.m_missiles = this.m_backup_missiles
   }
 }

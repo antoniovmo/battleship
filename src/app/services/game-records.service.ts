@@ -81,11 +81,6 @@ export class GameRecordsService {
 
   save_data( m_data: any) {
     this.dbService.m_data_base.collection(this.dbService.m_collections.records)
-        .add(Object.assign({}, m_data))
-        .then(() => {
-          console.log('save')
-        }).catch((error : any) => {
-      console.log(error)
-    });
+        .add(Object.assign({}, m_data));
   }
 }

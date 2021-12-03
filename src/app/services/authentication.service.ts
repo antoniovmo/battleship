@@ -46,8 +46,7 @@ export class AuthenticationService {
               this.m_user_b_subject.next(this.m_user);
             });
       } else {
-        console.log(user)
-        // this.router.navigate(['authentication/log-in']);
+        this.router.navigate(['authentication/log-in']);
       }
     });
   }
@@ -62,7 +61,6 @@ export class AuthenticationService {
           .get()
           .then((r_user : any) => {
             if (!r_user.exists) {
-              console.log(p_user)
               let r_provider = p_user.user.providerData[0]
               let temp_user =  new User(r_provider.displayName!, r_provider.email!, r_provider.photoURL!, r_provider.providerId)
               this.m_user_b_subject.next(temp_user);
@@ -101,7 +99,9 @@ export class AuthenticationService {
 
   logout() {
     signOut(this.m_auth).then(() => {
-      this.router.navigate(['authentication/log-in']);
+      this.router.navigate(['authentication/log-in']).then(r => {
+        window.location.reload();
+      });
     }).catch((error) => {
       console.log(error)
     });
