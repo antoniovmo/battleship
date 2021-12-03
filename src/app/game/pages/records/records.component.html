@@ -1,0 +1,47 @@
+<div class="container-sm bottom-space">
+    <h1 class="title-sm">Playing records</h1>
+</div>
+
+<div class="container-table">
+    <div class="row">
+        <div class="col-lg-12">
+            <ul class="responsive-table" style="padding-left: 0">
+                <li class="table-header">
+                    <div class="col space-2">
+                        Destroyed Ships
+                    </div>
+                    <div class="col space-2">
+                        Leftover Missiles
+                    </div>
+                    <div class="col space-2">
+                        Start Time
+                    </div>
+                    <div class="col space-2">
+                        End Time
+                    </div>
+                    <div class="col space-2">
+                        Game Over
+                    </div>
+                </li>
+                <li class="table-row animated fadeInLeft" *ngFor="let m_history of m_array_records | async ">
+                    <div class="col space-2" data-label="Destroyed Ships">
+                        {{ m_history.destroyed_ships  }}
+                    </div>
+                    <div class="col space-2" data-label="Leftover Missiles">
+                        {{ m_history.leftover_missiles }}
+                    </div>
+                    <div class="col space-2" data-label="Start Time">
+                        {{ m_history.start_time | date: 'HH:mm' }}
+                    </div>
+                    <div class="col space-2" data-label="End Time">
+                        {{ m_history.end_time | date: 'HH:mm' }}
+                    </div>
+                    <div class="col space-2" data-label="Game Over">
+                        {{ m_history.game_over }}
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

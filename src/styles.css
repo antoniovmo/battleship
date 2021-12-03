@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Outfit:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+.container-lg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+
+.title-lg {
+  font-family: "Odibee Sans", cursive;
+  font-size: 7em;
+}
+
+.container-sm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  cursor: pointer;
+}
+
+.bottom-space {
+  margin-bottom: 4em;
+}
+
+.title-sm {
+  font-family: "Odibee Sans", cursive;
+  font-size: 5em;
+}
+
+.btn-style {
+  font-family: "Montserrat", sans-serif;
+  font-size: inherit;
+  background-color: hsl(0, 0%, 50%);
+  padding: 0.5em 1em;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0.2em;
+  color: #ffffff;
+}
+
+.btn-primary {
+  font-size: 2rem;
+  margin: 0.5em;
+}
+
+.btn-secondary {
+  font-size: 2rem;
+  margin: 0.5em;
+}
+
+.btn-google {
+  border: solid black;
+  font-size: 2rem;
+  margin-left: 2rem;
+  padding: 0.5em 3em;
+  background-color: hsl(0, 0%, 100%) !important;
+}
+
+.btn-style:hover,
+.btn-style:focus {
+  background-color: hsl(0, 0%, 25%) !important;
+}
+
+
+@media (max-width: 767px) {
+
+  .title-lg {
+    font-size: 3em;
+  }
+  .btn-style {
+    display: flex;
+    justify-content: center;
+  }
+  .btn-primary {
+    font-size: 1em;
+  }
+
+  .btn-secondary {
+    font-size: 1rem;
+  }
+}

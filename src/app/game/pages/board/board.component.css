@@ -1,0 +1,139 @@
+.container-board {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.words-grid {
+    margin: 2vmin;
+    display: grid;
+    align-content: space-around;
+    justify-items: center;
+}
+
+.numbers-grid {
+    margin: -2.5vmin 1vmin 1vmin 7vmin;
+    display: flex;
+    width: 35%;
+    position: absolute !important;
+    justify-content: space-around;
+}
+
+.battleship-grid {
+    margin: 2vmin;
+    display: grid;
+    background-color: hsl(200, 75%, 51%);
+    grid-template-rows: repeat(10, 6vmin);
+    grid-template-columns: repeat(10, 6vmin);
+}
+
+.battleship-grid div {
+    border: 1px solid hsla(0, 0%, 100%, .2);
+}
+
+.ship {
+    position: relative;
+    background-color: hsl(0, 0%, 80%);
+}
+
+.ship.start.vertical {
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+.ship.end.vertical {
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.ship.start.horizontal{
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.ship.end.horizontal {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+
+/*.battleship-grid > .ship {
+  background-color: hsl(201, 74%, 43%);
+  border-radius: 0 !important;
+}*/
+
+.successful-shot, .missed-shot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.successful-shot::after, .missed-shot::after {
+    content: '';
+    position: absolute !important;
+    border-radius: 100%;
+    width: 2vmin;
+    height: 2vmin;
+}
+
+
+.successful-shot::after {
+    background-color: hsl(0, 100%, 29%) !important;
+}
+
+.missed-shot::after {
+    background-color: hsl(0, 0%, 0%) !important;
+}
+
+/* font and texts */
+.normal-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    margin: 1rem;
+}
+
+.successful-text {
+    font-family: 'Montserrat', sans-serif;
+    color: green;
+}
+
+
+.fail-text {
+    font-family: 'Montserrat', sans-serif;
+    color: red;
+    font-size: 30px;
+}
+
+.board-text {
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+@media (max-width: 767px) {
+    .numbers-grid {
+        margin: -3.5vmin 1vmin 1vmin 7vmin;
+        display: flex;
+        width: 60%;
+        position: absolute !important;
+        justify-content: space-around;
+    }
+
+    .normal-text {
+        font-size: 15px;
+    }
+
+    .successful-text {
+        font-size: 15px;
+    }
+
+    .fail-text {
+        font-size: 15px;
+    }
+
+    .board-text {
+        font-size: 15px;
+    }
+}
+
+

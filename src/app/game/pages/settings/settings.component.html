@@ -1,0 +1,15 @@
+<div class="container-lg">
+  <h1 class="title-lg">Profile</h1>
+  <div class="container-profile" *ngIf="authService.m_user">
+    <a class="profile-image">
+      <img *ngIf="authService.m_user.photo_url" [src]="authService.m_user.photo_url" alt=""/>
+    </a>
+    <h3 class="profile-title">
+      <a>{{ authService.m_user.name }}</a>
+      <span> {{ authService.m_user.email }}</span>
+    </h3>
+  </div>
+  <a (click)="authService.logout()" class="btn-style" style="margin-top: 2em">
+    Log out
+  </a>
+</div>

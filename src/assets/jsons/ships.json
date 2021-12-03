@@ -1,0 +1,42 @@
+[
+  {
+    "name": "destroyer",
+    "coordinates": [[0], [10]]
+  },
+  {
+    "name": "destroyer",
+    "coordinates": [[0], [10]]
+  },
+  {
+    "name": "destroyer",
+    "coordinates": [[0], [10]]
+  },
+  {
+    "name": "destroyer",
+    "coordinates": [[0], [10]]
+  },
+  {
+    "name": "submarine",
+    "coordinates": [[0, 1], [0, 10]]
+  },
+  {
+    "name": "submarine",
+    "coordinates": [[0, 1], [0, 10]]
+  },
+  {
+    "name": "submarine",
+    "coordinates": [[0, 1], [0, 10]]
+  },
+  {
+    "name": "cruiser",
+    "coordinates": [[0, 1, 2], [0, 10, 20]]
+  },
+  {
+    "name": "cruiser",
+    "coordinates": [[0, 1, 2], [0, 10, 20]]
+  },
+  {
+    "name": "battleship",
+    "coordinates": [[0, 1, 2, 3], [0, 10, 20, 30]]
+  }
+]

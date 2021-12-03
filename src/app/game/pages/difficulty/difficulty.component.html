@@ -1,0 +1,20 @@
+<div class="container-lg">
+    <h1 class="title-lg">Select a difficulty</h1>
+    <div>
+        <a *ngFor="let difficulty of m_array_difficulties" (click)="select_difficulty(difficulty)" class="btn-style btn-secondary">
+            {{ difficulty | titlecase }}
+        </a>
+    </div>
+
+    <form  [formGroup]="m_form_difficulty" (ngSubmit)="select_missiles(m_form_difficulty.value)" *ngIf="m_show_input">
+        <div class="group">
+            <input type="number" formControlName="m_number_missiles" required/><span class="bar"></span>
+            <label>Number of Missiles</label>
+        </div>
+        <button type="submit" class="btn-style btn-save">
+            Save
+        </button>
+    </form>
+</div>
+
+
