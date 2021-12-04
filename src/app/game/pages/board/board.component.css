@@ -111,6 +111,7 @@
 }
 
 
+
 @media (max-width: 767px) {
     .numbers-grid {
         margin: -3.5vmin 1vmin 1vmin 7vmin;
@@ -136,5 +137,50 @@
         font-size: 15px;
     }
 }
+
+@media (min-width: 300px) and (max-width: 800px) {
+    .numbers-grid {
+        margin: -3.5vmin 1vmin 1vmin 7vmin;
+        width: 60%;
+    }
+}
+
+
+@media (min-width: 800px) and (max-width: 900px) {
+    .numbers-grid {
+        margin: -3.5vmin 1vmin 1vmin 7vmin;
+        width: 45%;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1000px) {
+    .numbers-grid {
+        margin: -3.5vmin 1vmin 1vmin 7vmin;
+        width: 50%;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+    .numbers-grid {
+        margin: -3.5vmin 1vmin 1vmin 7vmin;
+        width: 50%;
+    }
+}
+
+
+@media (min-width: 1200px) and (max-width: 1300px) {
+    .numbers-grid {
+        margin: -3.5vmin 1vmin 1vmin 7vmin;
+        width: 40%;
+    }
+}
+
+@media (min-width: 1300px) and (max-width: 1600px) {
+    .numbers-grid {
+        margin: -3.5vmin 1vmin 1vmin 7vmin;
+        width: 30%;
+    }
+}
+
 
 
