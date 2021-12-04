@@ -8,7 +8,13 @@
             <ul class="responsive-table" style="padding-left: 0">
                 <li class="table-header">
                     <div class="col space-2">
-                        Destroyed Ships
+                        Difficulty
+                    </div>
+                    <div class="col space-2">
+                        Game Over
+                    </div>
+                    <div class="col space-2">
+                        Sunked ships
                     </div>
                     <div class="col space-2">
                         Leftover Missiles
@@ -19,25 +25,26 @@
                     <div class="col space-2">
                         End Time
                     </div>
-                    <div class="col space-2">
-                        Game Over
-                    </div>
+
                 </li>
                 <li class="table-row animated fadeInLeft" *ngFor="let m_history of m_array_records | async ">
-                    <div class="col space-2" data-label="Destroyed Ships">
+                    <div class="col space-2" data-label="Difficulty">
+                        {{ m_history.difficulty | titlecase   }}
+                    </div>
+                    <div class="col space-2" data-label="Game Over">
+                        {{ m_history.game_over }}
+                    </div>
+                    <div class="col space-2" data-label="Sunked ships">
                         {{ m_history.destroyed_ships  }}
                     </div>
                     <div class="col space-2" data-label="Leftover Missiles">
                         {{ m_history.leftover_missiles }}
                     </div>
                     <div class="col space-2" data-label="Start Time">
-                        {{ m_history.start_time | date: 'HH:mm' }}
+                        {{ m_history.start_time | date: 'dd MMM yyyy, HH:mm' }}
                     </div>
                     <div class="col space-2" data-label="End Time">
-                        {{ m_history.end_time | date: 'HH:mm' }}
-                    </div>
-                    <div class="col space-2" data-label="Game Over">
-                        {{ m_history.game_over }}
+                        {{ m_history.end_time | date: 'dd MMM yyyy, HH:mm' }}
                     </div>
 
                 </li>
