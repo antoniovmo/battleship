@@ -1,0 +1,18 @@
+.log-in-options {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin: 2em;
+}
+
+.container-error {
+    width: 50%;
+    text-align: center;
+}
+
+.log-in-options-error {
+    font-family: "Montserrat", sans-serif;
+    color: red;
+    font-size: 15px;
+    justify-content: center;
+}

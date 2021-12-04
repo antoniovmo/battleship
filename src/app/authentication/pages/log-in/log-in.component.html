@@ -1,10 +1,34 @@
 <div class="container-lg">
-    <h1 class="title-lg">Log in with Google</h1>
+
+    <h1 class="title-lg">{{ m_action ? 'Register' : 'Log in'}}</h1>
+    <div class="container-error" *ngIf="m_error != ''" >
+        <a class="log-in-options-error">{{ m_error }}</a>
+    </div>
+
+    <form [formGroup]="m_form_login"  (ngSubmit)="auth_with_password(m_form_login.value)">
+        <div class="group">
+            <input type="email" formControlName="m_email" required/><span class="bar"></span>
+            <label>Email</label>
+        </div>
+        <br>
+        <div class="group">
+            <input type="password" formControlName="m_password" required/><span class="bar"></span>
+            <label>Password</label>
+        </div>
+        <a (click)="change_action()" class="log-in-options"> {{ m_action ? 'I already have an account' : 'I do not have an account'}}</a>
+        <button type="submit" class="btn-style btn-save">
+            {{ m_action ? 'Register' : 'Log in'}}
+        </button>
+    </form>
+    <br>
+    <h1 class="title-lg" style="font-size: 2em">Or log in with Google</h1>
     <div>
+        <br>
         <a (click)="google_login()" class="btn-style btn-google">
             <img src="../../../../assets/icons/google-icon.svg" alt="google">
         </a>
     </div>
 </div>
+
 
 
