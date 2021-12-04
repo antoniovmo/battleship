@@ -20,15 +20,16 @@
 
 <div class="container-board">
     <h3 class="normal-text">Missiles : <a [ngClass]="m_missiles < m_backup_missiles/2 ? 'fail-text' : 'successful-text' ">{{ m_backup_missiles == 1000 ? 'Infinite' : m_missiles }}</a></h3>
-    <h3 class="normal-text">Destroyed Ships : {{ m_destroyed_ships }}</h3>
-</div>
-
-<div class="container-board">
-    <h3 [ngClass]="m_type_message ? 'successful-text' : 'fail-text' " class="normal-text">{{ m_message }}</h3>
+    <h3 class="normal-text">Sunken Ships : {{ m_destroyed_ships }}</h3>
 </div>
 
 <div class="container-board" *ngIf="m_is_end_game">
     <a (click)="play_again()" class="btn-style btn-primary">Play Again</a>
+</div>
+
+
+<div class="container-board">
+    <h3 [ngClass]="m_type_message ? 'successful-text' : 'fail-text' " class="normal-text">{{ m_message }}</h3>
 </div>
 
 
