@@ -170,7 +170,13 @@ export class BoardComponent implements OnInit {
       this.m_message = `Congratulations you've won`
 
 
-      this.m_game_record = new Record(this.authService.m_uid, this.m_destroyed_ships,this.m_missiles,  this.m_game_difficulty, false, this.databaseService.create_date(this.m_start_game), this.databaseService.create_date(new Date()))
+      let temp_missiles
+      if (this.m_game_difficulty == 'easy') {
+        temp_missiles = 'Infinite'
+      } else {
+        temp_missiles = this.m_missiles
+      }
+      this.m_game_record = new Record(this.authService.m_uid, this.m_destroyed_ships, temp_missiles,  this.m_game_difficulty, false, this.databaseService.create_date(this.m_start_game), this.databaseService.create_date(new Date()))
 
       this.grService.save_data(this.m_game_record)
     }

@@ -20,33 +20,33 @@ export class GameRecordsService {
       this.m_record_b_subject = new BehaviorSubject<Array<any>>(this.m_array_records);
 
       this.m_record_snapshot = this.create_snapshot(
-          this.dbService.m_data_base.collection(this.dbService.m_collections.records).where("player", "==", authService.m_uid),
+          this.dbService.m_data_base.collection(this.dbService.m_collections.records).where("player", "==", authService.m_uid).orderBy("end_time","desc"),
           this.snap_callback.bind(this));
     }
   }
 
   snap_callback(in_data: any, type: any, modified: any) {
-    const tmp_pcat = {
+    const temp_object = {
       id: in_data.id,
       ...in_data.data()
     };
 
-    if ( tmp_pcat.start_time && tmp_pcat.end_time) {
-      tmp_pcat.start_time = fromUnixTime(tmp_pcat.start_time.seconds)
-      tmp_pcat.end_time = fromUnixTime(tmp_pcat.end_time.seconds)
+    if ( temp_object.start_time && temp_object.end_time) {
+      temp_object.start_time = fromUnixTime(temp_object.start_time.seconds)
+      temp_object.end_time = fromUnixTime(temp_object.end_time.seconds)
     }
 
     if (type === 'added')
-      this.m_array_records.push(tmp_pcat);
+      this.m_array_records.push(temp_object);
     if (type === 'modified') {
-      const index = this.m_array_records.findIndex(it => it.id === tmp_pcat.id);
+      const index = this.m_array_records.findIndex(it => it.id === temp_object.id);
       if (index < 0) {
         return;
       }
-      this.m_array_records[index] = tmp_pcat;
+      this.m_array_records[index] = temp_object;
     }
     if (type === 'removed' || type === 'deleted') {
-      const index = this.m_array_records.findIndex(it => it.id === tmp_pcat.id);
+      const index = this.m_array_records.findIndex(it => it.id === temp_object.id);
       if (index < 0) {
         return;
       }
